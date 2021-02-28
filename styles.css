@@ -1,0 +1,13 @@
+h1 {
+  color: blue;
+  font-size: 72px;
+}
+
+body {
+  vertical-align: middle;
+  background-color: black;
+  background-image: url("starshd.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
