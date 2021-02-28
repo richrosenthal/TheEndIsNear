@@ -1,13 +1,31 @@
 h1 {
   color: blue;
-  font-size: 72px;
+
 }
 
-body {
-  vertical-align: middle;
-  background-color: black;
-  background-image: url("starshd.jpeg");
+
+html {
+  min-height: 100%;
+  /* vertical-align: middle; */
+  /* background-color: green; */
+  background-image: url("newrickmorty.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container {
+  ...
+  position: relative;
+}
+
+.child {
+  width: 75%;
+  height: 75%;
+  background-color: #d6cece;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

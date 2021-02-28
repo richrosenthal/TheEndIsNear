@@ -14,7 +14,7 @@ function createRetirementForm(){
    retirementForm.innerHTML +=
 
    `
-   <h1> How many Schmekels do you want to save? </h1>
+   <h1> How many Schmeckels do you need to retire Morty?!</h1>
    <form>
    Current Age: <input type="text" id="currentAge">
    Current Savings: <input type="text" id="currentSavings">
@@ -46,7 +46,14 @@ function retirementFormSubmission(){
      monthlyContributions: monthlyContributions,
    }
 
-  
+   let time = parseFloat(retirementAge) - parseFloat(currentAge)
+   let interestRate = 0.69 //nice
+   let numberOfTimes = 1
+   let principle = parseFloat(currentSavings)
+
+   //Formula is A = P(1+r/n)^nt
+   let finalAmount = principle * ((1 + (interestRate/numberOfTimes))**(numberOfTimes * time))
+   console.log(finalAmount)
 
   let finalResults = document.getElementById("results-container")
 
@@ -54,38 +61,9 @@ function retirementFormSubmission(){
 
    `
     <h1>HERE'S THE RESULTS MORTY! </h1>
+    <p>You saved ${parseInt((finalAmount/148))} Schmekels Morty!</p>
+    <br>
+    <p>That's like $${parseInt(finalAmount)} Morty!! WOW MORTY!</p>
    `
 
 }
-
-// function equipmentFormSubmission(){
-//   event.preventDefault();
-//   let name = document.getElementById("name").value
-//   let description = document.getElementById("description").value
-//   let location = document.getElementById("location").value
-//   let department = document.getElementById("department").value
-//   let task_description = document.getElementById("task_description").value
-//
-//   let equipment = {
-//     name: name,
-//     description: description,
-//     location: location,
-//     department: department,
-//
-//   }
-//
-//   fetch(`${BASE_URL}/equipment`, {
-//     method: "POST",
-//     headers: {
-//       'Accept': 'application/json',
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(equipment)
-//   })
-//   .then(resp =>  resp.json())
-//   .then (equipment => {
-//     let e = new Equipment(equipment.id, equipment.name,
-//       equipment.description, equipment.location, equipment.department)
-//     e.renderEquipment();
-//   })
-// }
